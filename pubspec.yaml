@@ -1,0 +1,30 @@
+name: haa_backup
+description: A professional Flutter app for media backup and management with optimized performance.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  sqflite: ^2.3.0
+  path_provider: ^2.1.1
+  path: ^1.8.3
+  image_picker: ^1.0.4
+  video_player: ^2.8.1
+  permission_handler: ^11.0.1
+  flutter_secure_storage: ^9.0.0
+  archive: ^3.4.9
+  intl: ^0.18.1
+  crypto: ^3.0.3
+  flutter_image_compress: ^2.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
