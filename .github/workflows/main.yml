@@ -2,34 +2,34 @@ name: Flutter Build APK
 
 on:
   push:
-    branches: [ "main" ] # سيعمل البناء تلقائياً عند كل عملية رفع كود للفرع الرئيسي
+    branches: [ "main" ]
 
 jobs:
   build:
-    runs-on: ubuntu-latest # استخدام نظام لينكس للبناء
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3 # سحب الكود من المستودع
+      - uses: actions/checkout@v4 # تم التحديث للنسخة 4
 
       - name: Install Java
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4 # تم التحديث للنسخة 4
         with:
           distribution: 'zulu'
-          java-version: '17' # فلاتر تحتاج جافا للبناء
+          java-version: '17'
 
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: 'stable' # استخدام النسخة المستقرة من فلاتر
+          channel: 'stable'
 
       - name: Get dependencies
-        run: flutter pub get # تحميل المكتبات
+        run: flutter pub get
 
       - name: Build APK
-        run: flutter build apk --release # أمر بناء التطبيق
+        run: flutter build apk --release
 
       - name: Upload APK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4 # تم التحديث للنسخة 4 (هنا كان الخطأ)
         with:
           name: release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk # مكان ملف الـ APK الناتج
+          path: build/app/outputs/flutter-apk/app-release.apk
